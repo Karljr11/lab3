@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<h1>$ave-Mart <a href="index.html"><img src="logo.png" width="40" height="40"></a></h1>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Home" class="tabcontent">
+  <h3>Welcome to <span style="color:#66CC66 ">Save-Mart</span></h3>
+  <p>Please, tell us a bit about you.</p>
+	Choose a preference:
+  <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="Lactose">Lactose-free</option>
+    <option value="Nuts">Nuts-free</option>
+    <option value="Organic">Organic</option>
+    <option value="None">None</option>
+	</select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Products for you!</h3>
+  <p>We've preselected products based on your preference.</p>
+	 Please select the products you would like to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<footer>
+  <hr class="hr">
+<p>Siteweb par: <em style="font-family: Lucida Handwriting">KD~D∃$</em></p>
+<div class="fixed">
+  <img src="grocery2.png" width="50%" height="50%">
+</div>
+</footer>
+<script src="groceries.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
